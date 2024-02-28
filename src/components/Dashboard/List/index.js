@@ -5,11 +5,16 @@ import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import { Tooltip } from "@mui/material";
 import ConvertNumber from "../../../functions/ConvertNumber";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function List({ coin }) {
   return (
     <Link to={`/coin/${coin.id}`}>
-    <tr className="list-row">
+    <motion.tr 
+     initial={{ opacity: 0, x: 50 }}
+     animate={{ opacity: 1, x: 0 }}
+     transition={{ duration: 0.5 }}
+    className="list-row">
       <Tooltip title="Coin Logo" placement="bottom-start">
         <td className="td-image">
           <img src={coin.image} className="coin-logo" />
@@ -82,7 +87,7 @@ function List({ coin }) {
           </p>
         </td>
       </Tooltip>
-    </tr>
+    </motion.tr>
     </Link>
   );
 }
