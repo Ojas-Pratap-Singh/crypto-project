@@ -48,8 +48,8 @@ function MainComponent() {
         <motion.img
           src={phone}
           className="phone"
-          initial={{ y: -10 }}
-          animate={{ y: 10 }}
+          initial={{ y: -5 }}
+          animate={{ y: 5 }}
           transition={{
             type: "smooth",
             repeatType: "mirror",
